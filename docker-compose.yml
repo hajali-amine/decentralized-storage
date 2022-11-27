@@ -1,13 +1,13 @@
 version: "3.4"
 services:
   ganache:
-    image: aminehajali/ganache
+    build: ./ganache
     container_name: ganache
     ports:
       - "8545:8545"
       - "7545:7545"
   truffle:
-    image: aminehajali/truffle
+    build: ./truffle
     container_name: truffle
     command: /bin/sh
     stdin_open: true
