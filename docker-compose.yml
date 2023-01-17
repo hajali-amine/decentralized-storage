@@ -1,20 +1,18 @@
 version: "3.4"
 services:
-  ganache:
-    build: ./ganache
-    container_name: ganache
-    ports:
-      - "8545:8545"
-      - "7545:7545"
-  truffle:
-    build: ./truffle
-    container_name: truffle
-    command: /bin/sh
-    stdin_open: true
-    tty: true
-    ports:
-      - "8080:8080"
-      - "3000:3000"
-      - "3001:3001"
+  ipfs:
+    image: lscr.io/linuxserver/ipfs
+    container_name: ipfs-2
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
     volumes:
-      - ./:/code
+      - /path/to/data:/config
+    ports:
+      - 8085:80
+      - 4001:4001
+      - 5001:5001
+      - 8080:8080
+      - 443:443 #optional
+    restart: unless-stopped

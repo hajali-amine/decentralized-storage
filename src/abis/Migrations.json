@@ -74,7 +74,7 @@
   "sourceMap": "34:480:1:-;;;123:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;123:50:1;158:10;150:5;;:18;;;;;;;;;;;;;;;;;;34:480;;;;;;",
   "deployedSourceMap": "34:480:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:480:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;347:165;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;347:165:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;82:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;58:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;240:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;240:103:1;;;;;;;;;;;;;;;;;:::i;:::-;;347:165;223:5;;;;;;;;;;;209:19;;:10;:19;;;205:26;;;409:19;442:11;409:45;;460:8;:21;;;482:24;;460:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;460:47:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;460:47:1;;;;230:1;205:26;347:165;:::o;82:36::-;;;;:::o;58:20::-;;;;;;;;;;;;;:::o;240:103::-;223:5;;;;;;;;;;;209:19;;:10;:19;;;205:26;;;329:9;302:24;:36;;;;205:26;240:103;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n\n  function upgrade(address new_address) public restricted {\n    Migrations upgraded = Migrations(new_address);\n    upgraded.setCompleted(last_completed_migration);\n  }\n}\n",
-  "sourcePath": "/code/src/contracts/Migrations.sol",
+  "sourcePath": "/media/ramez/Ramez/Users/Lenovo/Desktop/Ramos Studies/GL 5/Blockchain/TP/decentralized-storage/src/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1472,6 +1472,12 @@
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7BF190Ae1901D2e856D2140e544492D24F51284d",
+      "transactionHash": "0xd41982d9c0b515f601eb2691a0ec80a981b602d1aca9f8bf62335ee16d2f583c"
+    },
     "1603890166397": {
       "events": {},
       "links": {},
@@ -1525,10 +1531,16 @@
       "links": {},
       "address": "0xB7389C5cFb51F211E7200509D06c57C1E1182573",
       "transactionHash": "0x4663fe0db03e031783650535ceb665c623c9c434439232b91755338a53325e55"
+    },
+    "1673978745036": {
+      "events": {},
+      "links": {},
+      "address": "0xB03a85851D46a62cD98F08297B24AC484929ed50",
+      "transactionHash": "0xb57e7a70226cc55fc73b6f1e35fadcfa609112cacfeb4030eec845aacfb77e99"
     }
   },
-  "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-27T20:06:36.025Z",
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-01-17T18:28:54.666Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
